@@ -137,3 +137,16 @@ def static_files(filename):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)), debug=True)
+
+@app.route("/webhooks/gumroad", methods=["POST"])
+def gumroad_webhook():
+    try:
+        data = request.get_json(force=True)
+        print("[Webhook] Received Gumroad data:", data)
+        email = data.get("purchaser_email", "unknown")
+        print(f"[Webhook] Purchase received from {email}")
+        return jsonify({"status": "ok", "received": data}), 200
+    except Exception as e:
+        print("[Webhook] Error:", e)
+        return jsonify({"error": str(e)}), 400
+
