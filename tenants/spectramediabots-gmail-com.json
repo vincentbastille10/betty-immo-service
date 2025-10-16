@@ -1,0 +1,10 @@
+{
+  "full_name": "Spectra Media Bots",
+  "email": "spectramediabots@gmail.com",
+  "company": "Spectra Media",
+  "subscription": {
+    "id": "s5mlMljw0gfdHX5t4362pw==",
+    "active": true,
+    "recurrence": "monthly"
+  }
+}
