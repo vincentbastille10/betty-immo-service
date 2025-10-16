@@ -9,16 +9,28 @@
 <body>
   <div class="chat-card">
     <h1>{{ brand }}</h1>
-    <p class="subtitle">Assistant(e) IA pour {{ cfg.company or 'votre activité' }}</p>
+
+    <!-- Avatar de bienvenue -->
+    <div class="avatar">
+      <img src="https://i.postimg.cc/2jPPVYvb/20251016-1145-Futuristic-Android-Elegance-simple-compose-01k7p6f22kfsb8j27psehwqq3c.png"
+           alt="Avatar de Betty - Assistante IA" />
+    </div>
+
+    <p class="subtitle">Votre assistante IA personnelle</p>
+
     <div id="chat">
-      <div id="messages"></div>
+      <div id="messages">
+        <div class="bubble bot">👋 Bonjour, je suis Betty. Comment puis-je vous aider aujourd’hui ?</div>
+      </div>
       <div class="row">
         <input id="msg" placeholder="Posez votre question…" />
         <button id="send">Envoyer</button>
       </div>
     </div>
+
     <p class="tiny">Client: {{ cfg.full_name }} – {{ cfg.email }} — ID: {{ tenant_id }}</p>
   </div>
+
   <script>
     const tenantId={{ tenant_id|tojson }};
     const sendBtn=document.getElementById('send');
