@@ -1,13 +1,15 @@
-body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#f7f7fb; margin:0; }
-.chat-card { max-width: 720px; margin: 40px auto; background:#fff; border-radius: 16px; padding:24px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
-h1 { margin:0 0 6px; font-size:28px; }
-.subtitle { margin:0 0 20px; color:#666; }
-#chat { border:1px solid #eee; border-radius:12px; padding:12px; }
-#messages { height: 360px; overflow:auto; display:flex; flex-direction:column; gap:8px; padding:6px; }
-.bubble { max-width: 80%; padding:10px 12px; border-radius:14px; line-height:1.35; }
-.bubble.user { background:#e8f0fe; align-self:flex-end; }
-.bubble.bot { background:#f1f3f4; align-self:flex-start; }
-.row { display:flex; gap:8px; margin-top:8px; }
-input { flex:1; padding:10px 12px; border-radius:10px; border:1px solid #ddd; }
-button { padding:10px 16px; border:0; border-radius:10px; background:#111; color:#fff; cursor:pointer; }
-.tiny { margin-top:12px; font-size:12px; color:#888; }
+:root { --bg:#0b1020; --card:#11162a; --text:#e5e7eb; --muted:#93a2b8; --accent:#7aa2ff; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; background: var(--bg); color: var(--text); display:grid; place-items:center; min-height:100vh; }
+.chat-card { width:min(760px, 92vw); background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00)), var(--card); border-radius:22px; padding:28px; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+h1 { margin:0 0 6px 0; font-size:28px; }
+.subtitle { margin:0 0 18px 0; color:var(--muted); }
+#chat { border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:14px; background: rgba(255,255,255,.02); }
+#messages { height:48vh; min-height:240px; max-height:420px; overflow:auto; display:flex; flex-direction:column; gap:10px; padding:6px; }
+.bubble { max-width:85%; padding:10px 12px; border-radius:14px; line-height:1.35; font-size:15px; }
+.bubble.user { align-self:flex-end; background: rgba(122,162,255,.2); border:1px solid rgba(122,162,255,.35); }
+.bubble.bot { align-self:flex-start; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); }
+.row { display:flex; gap:10px; margin-top:10px; }
+.row input { flex:1; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:#0f1426; color:var(--text); outline:none; }
+.row button { padding:12px 16px; border-radius:12px; border:1px solid rgba(122,162,255,.45); background:linear-gradient(180deg, rgba(122,162,255,.3), rgba(122,162,255,.2)); color:var(--text); cursor:pointer; }
+.tiny { margin-top:10px; font-size:12px; color:var(--muted); }
